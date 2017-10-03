@@ -72,8 +72,10 @@ public class Aplicacion extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         Usuario ce=new Usuario();
-        ce.peso=82;
-        ce.altura=1.75f;
+        //ce.peso=82;
+        //ce.altura=1.75f;
+        ce.setPeso(82);
+        ce.setAltura(1.75f);
         
         Imc modelo=new Imc();
         modelo.u=ce;
