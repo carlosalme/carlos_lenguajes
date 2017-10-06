@@ -29,6 +29,10 @@ public class Aplicacion extends javax.swing.JFrame {
 
         botoncito = new javax.swing.JButton();
         etiqueta = new javax.swing.JLabel();
+        TextoPeso = new javax.swing.JTextField();
+        TextoAltura = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,28 +45,46 @@ public class Aplicacion extends javax.swing.JFrame {
 
         etiqueta.setText("Resultado");
 
+        jLabel1.setText("Peso:");
+
+        jLabel2.setText("Altura:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(72, 72, 72)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(157, 157, 157)
-                        .addComponent(botoncito))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(etiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(136, Short.MAX_VALUE))
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(botoncito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(TextoPeso)
+                            .addComponent(TextoAltura)))
+                    .addComponent(etiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
+                .addGap(51, 51, 51)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextoPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextoAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(botoncito)
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addComponent(etiqueta)
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addGap(60, 60, 60))
         );
 
         pack();
@@ -119,7 +141,11 @@ public class Aplicacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField TextoAltura;
+    private javax.swing.JTextField TextoPeso;
     private javax.swing.JButton botoncito;
     private javax.swing.JLabel etiqueta;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
