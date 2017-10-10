@@ -33,8 +33,8 @@ public class Aplicacion extends javax.swing.JFrame {
         TextoA = new javax.swing.JTextField();
         TextoB = new javax.swing.JTextField();
         TextoC = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        X1 = new javax.swing.JLabel();
+        X2 = new javax.swing.JLabel();
         Calcular = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,9 +45,9 @@ public class Aplicacion extends javax.swing.JFrame {
 
         jLabel3.setText("C");
 
-        jLabel5.setText("X1:");
+        X1.setText("X1:");
 
-        jLabel6.setText("X2:");
+        X2.setText("X2:");
 
         Calcular.setText("Calcular");
         Calcular.addActionListener(new java.awt.event.ActionListener() {
@@ -78,8 +78,8 @@ public class Aplicacion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Calcular)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5))
+                    .addComponent(X2)
+                    .addComponent(X1))
                 .addGap(78, 78, 78))
         );
         layout.setVerticalGroup(
@@ -94,10 +94,10 @@ public class Aplicacion extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(TextoB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(X1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
+                    .addComponent(X2)
                     .addComponent(TextoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addContainerGap(114, Short.MAX_VALUE))
@@ -108,8 +108,9 @@ public class Aplicacion extends javax.swing.JFrame {
 
     private void CalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalcularActionPerformed
         // TODO add your handling code here:
+        //constructor de clase para la conexion con la clase Valores
         Valores ca=new Valores();
-        
+        //conversion de los cuadros de texto a un valor flotante 
         float a= Float.parseFloat(TextoA.getText());
         ca.setA(a);
         
@@ -118,6 +119,9 @@ public class Aplicacion extends javax.swing.JFrame {
         
         float c=Float.parseFloat(TextoC.getText());
         ca.setC(c);
+        //asignacion del valor del calculo a la etiqeta que es un objeto 
+        X1.setText(ca.raiz1());
+        X2.setText(ca.raiz2());
     }//GEN-LAST:event_CalcularActionPerformed
 
     /**
@@ -160,10 +164,10 @@ public class Aplicacion extends javax.swing.JFrame {
     private javax.swing.JTextField TextoA;
     private javax.swing.JTextField TextoB;
     private javax.swing.JTextField TextoC;
+    private javax.swing.JLabel X1;
+    private javax.swing.JLabel X2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }

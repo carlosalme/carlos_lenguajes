@@ -9,6 +9,7 @@ package cuadratica;
  *
  * @author T-107
  */
+/*
 public class Calculo {
     Valores v;
     String x1;
@@ -26,3 +27,4 @@ public class Calculo {
     }
     
 }
+*/
