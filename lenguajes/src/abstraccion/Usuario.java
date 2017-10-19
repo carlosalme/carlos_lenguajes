@@ -12,6 +12,18 @@ package abstraccion;
 public class Usuario {
     private float peso;
     private float altura;
+    
+    public Usuario(float peso, float altura){
+        this.peso=peso;
+        this.altura=altura;
+    }
+    
+    public Usuario(){
+        System.out.println("el constructor"+peso +altura);
+        peso=80;
+        altura=175;
+        
+    }
 
     public float getPeso() {
         return peso;
