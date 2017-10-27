@@ -39,5 +39,13 @@ public class Pregunta {
     public void setRespuestas(ArrayList<Opcion> opciones) {
         this.opciones = opciones;
     }
+
+    public ArrayList<Opcion> getOpciones() {
+        return opciones;
+    }
+
+    public void setOpciones(ArrayList<Opcion> opciones) {
+        this.opciones = opciones;
+    }
     
 }
