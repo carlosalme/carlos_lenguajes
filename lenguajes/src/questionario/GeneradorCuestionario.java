@@ -34,7 +34,7 @@ public class GeneradorCuestionario {
         
         Pregunta p1=new Pregunta("Capital de Finlandia",opciones1);
         preguntas.add(p1);
-        return null;
+        return preguntas;
     }
     
 }
