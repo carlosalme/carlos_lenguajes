@@ -54,20 +54,19 @@ public class Aplicacion extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(botoncito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(TextoPeso)
-                            .addComponent(TextoAltura)))
-                    .addComponent(etiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(95, 95, 95)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(botoncito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(TextoPeso)
+                    .addComponent(TextoAltura))
                 .addContainerGap(147, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(etiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,16 +96,22 @@ public class Aplicacion extends javax.swing.JFrame {
         //ce.peso=82;
         //ce.altura=1.75f;
         //primero pedir el valor del texto al primer campo 
+        try{
         float peso = Float.parseFloat(TextoPeso.getText());
+        Validaciones.validarNumeroNoNegativo(peso);
         ce.setPeso(peso);
         //se hace los mismo para la altura
         float altura = Float.parseFloat(TextoAltura.getText());
+        Validaciones.validarNumeroNoNegativo(altura);
         ce.setAltura(altura);
         
         Imc modelo=new Imc();
         modelo.u=ce;
        
         etiqueta.setText(modelo.calcular());
+        }catch(Exception e){
+            etiqueta.setText(e.getMessage());
+        }
     }//GEN-LAST:event_botoncitoActionPerformed
 
     /**
