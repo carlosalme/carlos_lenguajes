@@ -7,6 +7,8 @@ package conexion;
 
 import java.sql.SQLException;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,14 +16,21 @@ import java.sql.*;
  */
 public class ProbarConexion {
     public static void main(String[] args) {
+        Connection con=null;
         try{
-        con= Conexion.conectarse("root", "");
+        con=Conexion.conectarse("root", "");
+            System.out.println("te conectaste");
         }catch(ClassNotFoundException e){
-                
+             System.out.println("no se cargo biel el driver");   
         }catch(SQLException e){
-            
+            System.out.println("un error desql"+ e.getMessage());
         }finally{
-           con.close(); 
+            try { 
+                if (con!=null) con.close();
+                System.out.println("ya se cerro todo");
+            } catch (SQLException ex) {
+                //Logger.getLogger(ProbarConexion.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 }
