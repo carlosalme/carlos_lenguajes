@@ -14,29 +14,16 @@ import java.util.logging.Logger;
  *
  * @author T-102
  */
-public class ProbarConexion {
+public class ProbarConexion1 {
     public static void main(String[] args) {
         Connection con=null;
         try{
         con=Conexion.conectarse("root", "");
             System.out.println("te conectaste");
-            //con la que se llama con vamos a generar una sentencia , la cual es una clase
-            //Statement at=con.createStatement();
-            //generamos la tablita
-            //at.execute("create table tablita(id integer primary key, nombre varchar(40))");
-            
-            //caso 1: insert 
-            PreparedStatement st=con.prepareStatement("insert into tablita values(?,?)");
-            //PreparedStatement st=con.prepareStatement("update tablita set nombre=? where id=?");
-            st.setInt(1,1);
-            st.setString(2, "Carlos E");
-            st.execute();
-            //tambien se cierran las sentencias al igual que las conexiones 
-            //at.close();
-            st.close();
-            //System.out.println("tabla generado con exito");
-            System.out.println("rgistro insertado");
-            
+            /*caso especial del select 
+            paso 1: generar una consulta(query)*/
+            Statement st= con.createStatement();
+            ResultSet rs=st.executeQuery("select * from tablita");
             
         }catch(ClassNotFoundException e){
              System.out.println("no se cargo biel el driver");   
