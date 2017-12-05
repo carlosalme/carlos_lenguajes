@@ -21,21 +21,21 @@ public class ProbarConexion {
         con=Conexion.conectarse("root", "");
             System.out.println("te conectaste");
             //con la que se llama con vamos a generar una sentencia , la cual es una clase
-            //Statement at=con.createStatement();
+            Statement at=con.createStatement();
             //generamos la tablita
-            //at.execute("create table tablita(id integer primary key, nombre varchar(40))");
+            at.execute("create table tablita(id integer primary key, nombre varchar(40))");
             
             //caso 1: insert 
-            PreparedStatement st=con.prepareStatement("insert into tablita values(?,?)");
+            //PreparedStatement st=con.prepareStatement("insert into tablita values(?,?)");
             //PreparedStatement st=con.prepareStatement("update tablita set nombre=? where id=?");
-            st.setInt(1,1);
-            st.setString(2, "Carlos E");
-            st.execute();
+            //st.setInt(1,1);
+            //st.setString(2, "Carlos E");
+            //st.execute();
             //tambien se cierran las sentencias al igual que las conexiones 
-            //at.close();
-            st.close();
-            //System.out.println("tabla generado con exito");
-            System.out.println("rgistro insertado");
+            at.close();
+            //st.close();
+            System.out.println("tabla generado con exito");
+            //System.out.println("rgistro insertado");
             
             
         }catch(ClassNotFoundException e){
